@@ -1,0 +1,259 @@
+/* General CSS Style */
+body 
+    {background-color: white; 
+    font-family: 'Times New Roman', Times, serif; 
+    color: black; 
+    ;
+    font-size: 25px;}
+
+.container {
+    background-color: white;
+    
+    }
+
+.contact-me{
+    background-color: darkgray;
+}
+
+
+    /* Navigation Bar Styling */
+.navbarbackground 
+    {
+        background-color: black;
+    
+    }
+
+.navbar
+    {
+        color: black;
+        text-align: center;
+        height: 200px;
+        
+    }
+.nav-item
+    {
+        text-align: center;
+    }
+
+.navbarsecond {
+    color: black;
+    text-align: center;
+    height: 200px;
+
+}
+
+
+.nav-link {
+    float: left
+    text-align center;
+    margin: 0 50px;
+    padding: 0 5px;
+    }
+
+
+#navcolor {
+    background-color: black;
+}
+
+.sublogo
+    {
+        float: left;
+        margin: 0%;
+    }
+
+
+    /* Header */
+header {
+    background-color: white;
+  }
+
+
+
+
+/* Jumbotron style */
+.jumbotron {
+    background-color: black;
+    border-radius: 0;
+}
+
+
+
+
+/* Headers */
+h1
+    {font-size: 65px; 
+    font-weight: normal; 
+    color: white; 
+    text-align: center;
+    font-family: 'Raleway', sans-serif;}    
+
+
+
+h2
+    {font-weight: 60px; 
+    color: black;
+    
+    text-align: center;
+    font-style: italic;}
+
+
+
+h3
+    {font-weight: 35px;
+    color: black;
+    text-align: left;}
+
+h4 {
+    font-size: 65px; 
+    font-weight: normal; 
+    color: black; 
+    text-align: center;
+    font-family: 'Raleway', sans-serif;    
+}
+
+  /* Contact Form  */
+.contact
+    {
+        text-align: left;
+    }
+
+ul#contactme
+    {
+        text-align: center;
+    }
+
+
+.textwrap1  {
+    float: right;
+    margin: 10px;}
+    
+
+
+    /* Social Media Sticky Menu */
+.icon-bar {
+        position: fixed;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 70px;
+      }
+      
+      .icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 20px;
+
+      }
+      
+      .icon-bar a:hover, .footer-social a:hover {
+        background-color: grey;
+        color: white;
+
+      }
+      
+      .github {
+        background: black;
+        color: white;
+      }
+
+      .facebook {
+        background: #3B5998;
+        color: white;
+      }
+      
+      .instagram {
+        background: #dd4b39;
+        color: white;
+      }
+      
+      .linkedin {
+        background: #007bb5;
+        color: white;
+      }
+      
+      .tenorsite {
+        background: #bb0000;
+        color: white;
+
+      }
+      
+      .content {
+        margin-left: 75px;
+        font-size: 30px;
+      }
+
+
+
+/* table for portfolio */
+
+.material {
+    text-align: center;
+}
+
+      /* Footer Design Elements */
+footer {
+    background-color: darkgrey;
+    text-align: center;
+    }
+
+
+.row {
+    background-color: darkgrey;
+    }
+
+.row_secondary  {
+    background-color: white;
+}  
+.footer-social a {
+    text-decoration: none;
+}
+
+a.facebook {
+    padding: 15px 5px  5px 5px;
+}
+a.tenorsite {
+    padding: 15px 5px  5px 5px;
+    
+}
+a.instagram {
+    padding: 15px 5px  5px 5px;
+}
+a.linkedin {
+    padding: 15px 5px  5px 5px;
+}
+a.github {
+    padding: 15px 5px  5px 5px;
+}
+.footer-social {
+    
+    margin: 15px;
+    padding: 20px;
+    width: 100%;
+    background-color: darkgrey;
+    display: block;
+    text-align: center;
+
+    }
+    
+    footer p {
+        margin-bottom: 0;
+    
+    }
+
+/* Picture Design Elements */
+.landingpic 
+{
+    
+    background-color: white;
+    }
+
+
+
+
+
+
+
