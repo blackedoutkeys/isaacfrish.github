@@ -11,23 +11,55 @@
     <title>Coding Quiz</title>
   </head>
     <body>
+        <h2>Code Quiz For Beginners</h2>
+        <button id="currentHighScore" onclick="showHighScore ()">High Score</button>
+        <div class="timer-container" id="gameTimer">Time Remaining: </div>
+
         <div class="container">
-            <div id="question-container" class="hide"></div>    
-            <h2>This is a quiz for beginners to test their knowledge of basic coding knowledge</h2>
-            <button id="start-btn" class="start-btn btn">Start Quiz</button>
-            <button id="next-button" class="next-btn btn hide"></button>
-            <button id="currentHighScore" onclick="showHighScore ()">High Score</button>
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button id="a">Answer 1</button>
-                <button id="b">Answer 2</button>
-                <button id="c">Answer 3</button>
-                <button id="d">Answer 4</button>
+            <div id="game" class="justify-center flex-column hide"></div> 
+              <div id="hud" class="hud-item hide"></div>
+                <p id="progressText" class="hud-prefix"></p>
+                  <div id="progrssBar">
+                      <div id="progressBarFull"></div>
+                  </div>
+                  <div class="hud-tem">
+                    <p class="hud-prefix">Score</p>
+                      <h1 class="hud-main-text" id="score">0</h1>
+                  </div>
+                  <div class="controls">
+                    <button id="start-btn" class="start-btn btn">Start Quiz</button>
+                    <button id="next-btn" class="next-btn btn hide">Next Question</button>
+              <div id="question">What is the answer to this question?</div>
+                <div id="answer-buttons" class="btn-grid hide">
+                  <div class="choice-container">
+                    <p class="choice-prefix">A</p>
+                    <p class="choice-text" data-number="1">Choice 1</p>
+                  </div>
+                  <div class="choice-container">
+                    <p class="choice-prefix">B</p>
+                    <p class="choice-text" data-number="2">Choice 2</p>
+                  </div>
+                  <div class="choice-container">
+                    <p class="choice-prefix">C</p>
+                    <p class="choice-text" data-number="3">Choice 3</p>
+                  </div>
+                  <div class="choice-container">
+                    <p class="choice-prefix">D</p>
+                    <p class="choice-text" data-number="4">Choice 4</p>
+                  </div>
+                </div>               
+                  
+             
+                  <!-- <button id="btn">Answer 1</button> -->
+                  <!-- <button id="btn">Answer 2</button> -->
+                  <!-- <button id="btn">Answer 3</button> -->
+                  <!-- <button id="btn">Answer 4</button> -->
+            <!-- </div> -->
+
+            <!-- <span id="right-answers"></span> -->
+
             </div>
 
-        </div>
-
-            
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="script.js"></script>

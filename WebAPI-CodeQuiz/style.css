@@ -28,3 +28,13 @@ body {
 .hide {
     display: none;
 }
+
+.timer-container {
+    width: 150px;
+    background-color: white;
+    border-radius: 5px;
+    border-style: dotted;
+    height: 150px;
+    max-width: 20%;
+    max-height: 20%;
+}
