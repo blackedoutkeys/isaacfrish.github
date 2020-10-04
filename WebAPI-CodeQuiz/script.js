@@ -1,127 +1,117 @@
 var startButton = document.getElementById ('start-btn');
 var nextButton = document.getElementById ('next-btn');
-// var questionContainerElement = document.getElementById ('game');
-// var questionElement = document.getElementById('question');
-var answerButtonElements = document.getElementById('answer-buttons');
-var countDownTimer = document.getElementById('gameTimer');
+var questionContainer = document.getElementById ('questionBox');
+var answerContainer = document.getElementById ('answers');
+
 startButton.addEventListener('click', startGame);
+var questionsArray = ['What does HTML stand for?',
+                    'When pulling data from an array, what number do you begin counting with?',
+                    'What number will print when you print the following function to the console? ()',
+                    'Which of the following strings is a true boolean value?',
+                    'What is the proper sequence to push data to Gihub?',
+                    'To add Javascript to an HTML document you can use which of the following methods?',
+                    'Who is the best at writing code?' 
+                    ];
+let question1 = questionsArray[0]
+let question2 = questionsArray[1]
+let question3 = questionsArray[2] 
+let question4 = questionsArray[3]
+let question5 = questionsArray[4]  
+let question6 = questionsArray[5] 
+let question7 = questionsArray[6]
+
+var answerArray = [
+  ['HyperText Markup Language', 'HypoText Markdown Language', 'HyperTextual Makeup Linguistics', 'HypedUp Texty Bois'],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
 
 
-const question = document.querySelector('#question')
-const choices = Array.from(document.querySelectorAll('#question'));
-const progressText = document.querySelector('#progressText')
-const scoreText = document.querySelector('#score')
-const progressBarFull = document.querySelector('#progressBarFull')
-let currentQuestion = {}
-let acceptingAnswers=true
-let score=0
-let questionCounter = 0
-let availableQuestions = []
-let questions = [
-  {
-    question: 'placeHolder1',
-      choice1: 'blah',
-      choice2: 'bleh',
-      choice3: 'bloh',
-      choice4: 'bluh',
-  },
-  {
-    question: 'placeHolder2',
-      choice1: 'blah2',
-      choice2: 'bleh2',
-      choice3: 'bloh2',
-      choice4: 'bluh2',
-  },
-  {
-    question: 'placeHolder3',
-      choice1: 'blah3',
-      choice2: 'bleh3',
-      choice3: 'bloh3',
-      choice4: 'bluh3',
-  },
-  {
-    question: 'placeHolder4',
-      choice1: 'blah4',
-      choice2: 'bleh4',
-      choice3: 'bloh4',
-      choice4: 'bluh4',
-  },
-  {
-    question: 'placeHolder5',
-      choice1: 'blah5',
-      choice2: 'bleh5',
-      choice3: 'bloh5',
-      choice4: 'bluh5',
-  },
-]
+let answer1 = answerArray[0]
+let answer2 = answerArray[1]
+let answer3 = answerArray[2] 
+let answer4 = answerArray[3]
+let answer5 = answerArray[4]  
+let answer6 = answerArray[5] 
+let answer7 = answerArray[6]
 
 
-const SCORE_POINTS = 100;
-const MAX_QUESTIONS = 5;
 
 //functions list for quiz
+
+
+
+// Function To begin game 
 function startGame () {
-    console.log ('Started');
-    //works up to here
-    score = 0; // to reset the counter after the test started - add score indicator
-    startButton.classList.add('hide');
-    // shuffledQuestions = questions.sort (() => Math.random() - 0.5);
-    availableQuestions = [...questions]
-    getNewQuestion()
-    timerStart
-    nextButton.classList.remove('hide');
-    questionContainerElement.classList.remove('hide');
-    showQuestion
+  // console.log ('Started');
+  countdown(1);
+  score = 0; // to reset the counter after the test started - add score indicator
+  startButton.classList.add('hide');
+  nextButton.classList.remove('hide');
+  // initialQuestion();
+  questionContainer.classList.remove('hide')
+  answerContainer.classList.remove('hide');
+  actualGame
 }
 
+function actualGame () {
+  questionsArray.Math.floor(math.random() * 6)
+  nextQuestion;
+  //works up to here
 
-// // function getNewQuestion  = () => {
-//   if (availableQuestions.length=0 || questionCounter > MAX_QUESTIONS) {
-//     localStorage.setItem('mostRecentScore', score)
-//     return window.location.assign()
-//   }
+}
+// function initialQuestion () {
+  
 // }
 
-function timerStart () {
-  var timer = new Timer();
-  timer = getElementById('gameTimer');
-  timer.start({countdown: true, startValues: {seconds: 60}});
+
+//pushes data arrays into container for each subsequent question
+function nextQuestion() {
   
-  $('#countdownExample .values').html(timer.getTimeValues().toString());
-  
-  timer.addEventListener('secondsUpdated', function (e) {
-      $('#countdownExample .values').html(timer.getTimeValues().toString());
-  });
-  
-  timer.addEventListener('targetAchieved', function (e) {
-      $('#countdownExample .values').html('Quiz Over You Fail!!');
-  });
   }
 
-function showQuestion() {
-    questionElement.innerText = questions.question;
-    question.answers.array.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text;
-        button.classList.add ('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonElements.appendChild(button);
-    });
+
+
+//end game functions
+
+
+
+
+
+
+
+//Countdown clock container function
+function countdown(minutes) {
+  var seconds = 60;
+  var mins = minutes
+  function tick() {
+      var counter = document.getElementById("gameTimer");
+      var current_minutes = mins-1
+      seconds--;
+      counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+      if( seconds > 0 ) {
+          setTimeout(tick, 1000);
+      } else {
+          
+          if(mins > 1){
+              
+              countdown(mins-1);        
+              //this section doesn't fire   
+          if(mins === 0) {
+            alert('You ran out of time! You have failed the quiz. Try Again!');
+            }
+          }
+      }
+  }
+  tick();
 }
 
+//Log Hi score
 
-
-// const questions = [
-//     {
-//       question: 'Placeholder 1',
-//   		answers: [
-//             {text: 'answer 1', correct: true},
-//   			    {text: 'answer 2', correct: false},
-//             {text: 'answer 3', correct: false},
-//             {text: 'answer 4', correct: false},
-// 				]
-//     }
-// ];
+function leaderBoard  () {
+  //call end game function, log score post to leaderboard
+}

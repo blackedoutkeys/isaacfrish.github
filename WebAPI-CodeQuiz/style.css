@@ -19,22 +19,30 @@ body {
 .container {
     width: 900px;
     max-width: 80%;
+    height: 500px;
+    max-height: 40%;
     background-color: white;
     border-radius: 5px;
     border-style: groove;
 }
 
+#fullContainer {
+    width: 1250px;
+    max-width: 90%;
+    height: 750px;
+    max-height: 60%;
+}
 
 .hide {
     display: none;
 }
 
-.timer-container {
+.hud-container {
     width: 150px;
     background-color: white;
     border-radius: 5px;
     border-style: dotted;
     height: 150px;
-    max-width: 20%;
+    max-width: 40%;
     max-height: 20%;
 }
