@@ -1,100 +1,153 @@
-var startButton = document.getElementById ('start-btn');
-var nextButton = document.getElementById ('next-btn');
-var questionContainer = document.getElementById ('questionBox');
-var answerContainer = document.getElementById ('answers');
+const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
+let countRightAnswers = 0;
+let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame);
-var questionsArray = ['What does HTML stand for?',
-                    'When pulling data from an array, what number do you begin counting with?',
-                    'What number will print when you print the following function to the console? ()',
-                    'Which of the following strings is a true boolean value?',
-                    'What is the proper sequence to push data to Gihub?',
-                    'To add Javascript to an HTML document you can use which of the following methods?',
-                    'Who is the best at writing code?' 
-                    ];
-let question1 = questionsArray[0]
-let question2 = questionsArray[1]
-let question3 = questionsArray[2] 
-let question4 = questionsArray[3]
-let question5 = questionsArray[4]  
-let question6 = questionsArray[5] 
-let question7 = questionsArray[6]
+startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++
+  setNextQuestion()
+})
 
-var answerArray = [
-  ['HyperText Markup Language', 'HypoText Markdown Language', 'HyperTextual Makeup Linguistics', 'HypedUp Texty Bois'],
-  [],
-  [],
-  [],
-  [],
-  [],
-  []
-];
-
-
-let answer1 = answerArray[0]
-let answer2 = answerArray[1]
-let answer3 = answerArray[2] 
-let answer4 = answerArray[3]
-let answer5 = answerArray[4]  
-let answer6 = answerArray[5] 
-let answer7 = answerArray[6]
-
-
-
-//functions list for quiz
-
-
-
-// Function To begin game 
-function startGame () {
-  // console.log ('Started');
-  countdown(1);
-  score = 0; // to reset the counter after the test started - add score indicator
-  startButton.classList.add('hide');
-  nextButton.classList.remove('hide');
-  // initialQuestion();
-  questionContainer.classList.remove('hide')
-  answerContainer.classList.remove('hide');
-  actualGame
+function startGame() {
+  countdown(2);
+  startButton.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  currentQuestionIndex = 0
+  countRightAnswers = 0; 
+  questionContainerElement.classList.remove('hide')
+  setNextQuestion()
 }
 
-function actualGame () {
-  questionsArray.Math.floor(math.random() * 6)
-  nextQuestion;
-  //works up to here
-
+function setNextQuestion() {
+  resetState()
+  showQuestion(shuffledQuestions[currentQuestionIndex])
 }
-// function initialQuestion () {
-  
-// }
 
+function showQuestion(question) {
+  questionElement.innerText = question.question
+  question.answers.forEach(answer => {
+    const button = document.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('btn')
+    if (answer.correct) {
+      button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtonsElement.appendChild(button)
+  })
+}
 
-//pushes data arrays into container for each subsequent question
-function nextQuestion() {
-  
+function resetState() {
+  clearStatusClass(document.body)
+  nextButton.classList.add('hide')
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
+}
 
+function selectAnswer(e) {
+  const selectedButton = e.target
+  const correct = selectedButton.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtonsElement.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct)
+  })
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide')
+  } else {
+    startButton.innerText = 'Restart'
+    startButton.classList.remove('hide')
+  }
+  if (selectedButton.dataset = correct) {
+    countRightAnswers++;
+  }
+ document.getElementById('right-answers').innerHTML = countRightAnswers; 
+}
 
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
+  }
+}
 
-//end game functions
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+}
 
-
-
-
-
+    const questions = [ 
+      { question: 'What does HTML stand for?',
+        answers:[
+                  {text:'HyperText Markup Language', correct:true},
+                  {text:'HypedUp Texty Bois', correct:false},
+                  {text:'HyperTextual Makeup Linguistics', correct:false},
+                  {text:'HypoText Markdown Language', correct:false},
+                ] }, 
+      { question: 'When pulling data from an array, what number do you begin counting with?',
+        answers:[
+                  {text:'1', correct:false},
+                  {text:'0', correct:true},
+                  {text:'2', correct:false},
+                  {text:'What is an array?', correct:false}, 
+                ] },            
+      { question: 'What symbol will be referenced in a CSS doc to call an ID?',
+        answers:[
+                  {text:'!', correct:false},
+                  {text:'#', correct:true},
+                  {text:'.', correct:false},
+                  {text:'&*$^', correct:false},
+                ] },
+      { question: 'Which of the following strings prints a true boolean value?',
+        answers:[
+                  {text:'+=', correct:false},
+                  {text:'+-%', correct:false},
+                  {text:'===', correct:true},
+                  {text:'==-', correct:false},
+                ] },     
+      { question: 'What is the proper sequence to push data to Github?',
+        answers:[
+                  {text:'git add, git push, git commit', correct:false},
+                  {text:'git ice, git ice, git baby', correct:false},
+                  {text:'git add, git commit, git push', correct:true},
+                  {text:'git push, git pushit, git pushitrealgood', correct:false},
+                ] },
+      { question: 'To add Javascript to an HTML document you can use which of the following methods?',
+        answers:[
+                  {text:'Inline with the HTML doc', correct:false},
+                  {text:'External Linking', correct:false},
+                  {text:'add defer method at top of HTML', correct:false},
+                  {text:'All of the above', correct:true},
+                ] },    
+      { question: 'Who is the best at writing code?',
+        answers:[
+                  {text:'You', correct:false},
+                  {text:'Me', correct:false},
+                  {text:'Everyone', correct:false},
+                  {text:'Nobody', correct:true},                 
+                ] }
+    ];
 
 
 //Countdown clock container function
+
+
 function countdown(minutes) {
   var seconds = 60;
-  var mins = minutes
-  function tick() {
+  var mins = minutes;
+  function clockticker() {
       var counter = document.getElementById("gameTimer");
-      var current_minutes = mins-1
+      var current_minutes = mins-1;
       seconds--;
       counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
       if( seconds > 0 ) {
-          setTimeout(tick, 1000);
+          setTimeout(clockticker, 1000);
       } else {
           
           if(mins > 1){
@@ -107,11 +160,5 @@ function countdown(minutes) {
           }
       }
   }
-  tick();
-}
-
-//Log Hi score
-
-function leaderBoard  () {
-  //call end game function, log score post to leaderboard
+  clockticker();
 }

@@ -11,50 +11,30 @@
     <title>Coding Quiz</title>
   </head>
     <body>
+      <div class="jumbotron">
         <h2>Code Quiz For Beginners</h2>
-        <!-- <button id="currentHighScore" onclick="showHighScore ()">High Score</button> -->
-    <div class="container">
-      <div class="row">
-          <div class="hud-container col" id="gameTimer">Time Remaining: </div>
-            <button id="currentHighScore"><a href="Leaderboard.html">High Score</a></button>
-              <div class="hud-container col">
-              <p>Score</p>
-                <h1 id="score">0</h1>
-              </div>
-          </div>
-    </div>
-    
-        
-
-        <div class="container" id="fullContainer">
-          <div id="quiz-container" class="justify-center flex-column hide"></div> 
-            <!-- <div id="hud" class="hud-item hide"></div>
-              <p id="progressText" class="hud-prefix"></p>
-                <div id="progrssBar">
-                    <div id="progressBarFull"></div>
-                </div> -->
-                
-                <div id="questionBox" class="container hide" placeholder="questionsHere"></div>
-                <div class="controls container">
-                  <button id="start-btn" class="start-btn btn">Start Quiz</button>
-                  <button id="next-btn" class="next-btn btn hide">Next Question</button>
-                      <div class= 'btn-grid hide' id="answers">
-                        <button class='answer-btn btn-outline-primary btn-lg'>Answer 1</button> 
-                        <button class='answer-btn btn-outline-primary btn-lg'>Answer 2</button>
-                        <button class='answer-btn btn-outline-primary btn-lg'>Answer 3</button>
-                        <button class='answer-btn btn-outline-primary btn-lg'>Answer 4</button>
-                      </div>
-
-              </div>    
-                  
-             
-                  
-            <!-- </div> -->
-
-            <!-- <span id="right-answers"></span> -->
-
+        <span id="right-answers"></span>
+        <span id="gameTimer"></span>
+      </div>
+        <div class="container">
+          <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+              <button class="btn">Answer 1</button>
+              <button class="btn">Answer 2</button>
+              <button class="btn">Answer 3</button>
+              <button class="btn">Answer 4</button>
             </div>
+          </div>
+          <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+          </div>
+        </div>
 
+              
+              
+             
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="script.js"></script>
