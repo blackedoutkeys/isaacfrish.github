@@ -1,87 +1,160 @@
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+//GB - Global variable
+//GB to pull start button from HTML
+const startButton = document.getElementById('start-btn');
+
+//GB to pull next button from HTML
+const nextButton = document.getElementById('next-btn');
+
+//GB to pull question container from HTML
+const questionContainerElement = document.getElementById('question-container');
+
+//GB to pull question div from HTML
+const questionElement = document.getElementById('question');
+
+//GB to pull four answer buttons from HTML
+const answerButtonsElement = document.getElementById('answer-buttons');
+
+//sets score to 0
 let countRightAnswers = 0;
-let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
+//creates GB for shuffled questions and index array for said questions
+let shuffledQuestions, currentQuestionIndex;
+
+//sets GB for on click/toggle to access Leaderboard with local storage
+let leaderBoardButtonEl = document.getElementById('leaderBoardButton').addEventListener('click', accessLeaderboard);
+
+//sets GB to pull game timer from the HTML
+var timeEl = document.getElementById("gameTimer");
+
+//GB sets timer to 60 seconds
+var secondsLeft = 60;
+
+
+//starts a click function and calls start of game function
+startButton.addEventListener('click', startGame);
+
+//sets click function to move onto next questions
 nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
-  setNextQuestion()
-})
+  currentQuestionIndex++;
+  setNextQuestion();
+});
 
+
+//sets timer for a basic countdown from 60 seconds to 0
+function setTime() {
+      var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft + " seconds left.";
+  
+        if(secondsLeft === 0) {
+          clearInterval(timerInterval);
+          
+      }
+  
+    }, 1000);
+    stopGame;
+	}  
+
+//initializes game, sets timer, score, and all counters to zero and begins the randomized array pull. also hides start button/start container
 function startGame() {
-  countdown(2);
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
+    
+	setTime (); 
+  startButton.classList.add('hide');
+
+  //look up this part of function for better understanding
+  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+  currentQuestionIndex = 0;
   countRightAnswers = 0; 
-  questionContainerElement.classList.remove('hide')
-  setNextQuestion()
+  //
+  questionContainerElement.classList.remove('hide');
+  setNextQuestion();
 }
-
+//this function is in between questions to prep the array for a pull and calls for a reset in between answering a question
 function setNextQuestion() {
-  resetState()
-  showQuestion(shuffledQuestions[currentQuestionIndex])
+  resetState();
+  //figure out what this means
+  showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
-
+//pulls questions from question data array and populates them into their appropriate objects
 function showQuestion(question) {
-  questionElement.innerText = question.question
+  //look up to understand this entire function
+  questionElement.innerText = question.question;
   question.answers.forEach(answer => {
-    const button = document.createElement('button')
-    button.innerText = answer.text
-    button.classList.add('btn')
+    const button = document.createElement('button');
+    button.innerText = answer.text;
+    button.classList.add('btn');
     if (answer.correct) {
-      button.dataset.correct = answer.correct
+      button.dataset.correct = answer.correct;
     }
-    button.addEventListener('click', selectAnswer)
-    answerButtonsElement.appendChild(button)
-  })
+    button.addEventListener('click', selectAnswer);
+    answerButtonsElement.appendChild(button);
+  });
 }
-
+//this function is to reset state in between questions to unhide and re-hide elements in container
 function resetState() {
-  clearStatusClass(document.body)
-  nextButton.classList.add('hide')
+  clearStatusClass(document.body);
+  nextButton.classList.add('hide');
   while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
 }
 
+//look up the e trigger and the rest of this function
 function selectAnswer(e) {
-  const selectedButton = e.target
-  const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
+  const selectedButton = e.target;
+  const correct = selectedButton.dataset.correct;
+  setStatusClass(document.body, correct);
   Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
+    setStatusClass(button, button.dataset.correct);
+  });
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
+    nextButton.classList.remove('hide');
   } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    startButton.innerText = 'Restart';
+    startButton.classList.remove('hide');
+    stopGame(); 
   }
   if (selectedButton.dataset = correct) {
     countRightAnswers++;
   }
  document.getElementById('right-answers').innerHTML = countRightAnswers; 
+  
+ countRightAnswers;
 }
 
+
 function setStatusClass(element, correct) {
-  clearStatusClass(element)
+  clearStatusClass(element);
   if (correct) {
-    element.classList.add('correct')
+    element.classList.add('correct');
   } else {
-    element.classList.add('wrong')
+    element.classList.add('wrong');
   }
 }
 
+
+
 function clearStatusClass(element) {
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
+  element.classList.remove('correct');
+  element.classList.remove('wrong');
 }
 
+//this is a halt game function for when the player either runs out of time or finishes the quiz
+function stopGame () {
+  userInitials = prompt('Please enter your initials for the leaderboard!');
+  localStorage.setItem ('userInitials');
+  resetState;
+}
+  
+//toggle feature to access leaderboard. can be accessed at any time during the game
+function accessLeaderboard () {
+  let leaderboard = document.getElementById('jumbotronLeader');
+    leaderboard.classList.remove('hide');
+    localStorage.setItem ('userInitials', userName);
+    document.getElementById('leaderBoardEl').textContent = localStorage.getItem(userName);
+ }
+
+//Questions array. Questions are set as objects and pull their appropriate answers (also objects) into container on next button click 
     const questions = [ 
       { question: 'What does HTML stand for?',
         answers:[
@@ -132,33 +205,19 @@ function clearStatusClass(element) {
                   {text:'Everyone', correct:false},
                   {text:'Nobody', correct:true},                 
                 ] }
-    ];
+              ];
 
 
-//Countdown clock container function
 
 
-function countdown(minutes) {
-  var seconds = 60;
-  var mins = minutes;
-  function clockticker() {
-      var counter = document.getElementById("gameTimer");
-      var current_minutes = mins-1;
-      seconds--;
-      counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-      if( seconds > 0 ) {
-          setTimeout(clockticker, 1000);
-      } else {
-          
-          if(mins > 1){
-              
-              countdown(mins-1);        
-              //this section doesn't fire   
-          if(mins === 0) {
-            alert('You ran out of time! You have failed the quiz. Try Again!');
-            }
-          }
-      }
-  }
-  clockticker();
-}
+
+
+
+
+              /*leader board will open and not close, toggle not functioning correclty. 
+              local stroage not showing users or pulling proper data. score doesnt reset properly.
+              timer ending doesnt trigger end game functionality
+              edit CSS to be my styling and simplify for "appropriate leveling."
+              changing to correct answer allows for infinite score increase
+              clicking restart once clock hits zero starts timer again in negative state
+              make readme*/

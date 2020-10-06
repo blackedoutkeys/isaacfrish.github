@@ -13,8 +13,23 @@
     <body>
       <div class="jumbotron">
         <h2>Code Quiz For Beginners</h2>
+        <button class="btn " id="leaderBoardButton">Leaderboard</button>
+        <div class="container jumbotron hide" id="jumbotronLeader">
+          <h1>Leaderboard</h1>
+              <ol>
+                  <ul id="firstPlace">1. </ul>
+                  <ul id="secondPlace">2. </ul>
+                  <ul id="thirdPlace">3. </ul>
+  
+              </ol>
+  
+              <button class='btn-outline-primary btn-lg hide'>Submit</button> 
+  
+          </div>
         <span id="right-answers"></span>
-        <span id="gameTimer"></span>
+        <div id="gameTimer"></div>
+        
+
       </div>
         <div class="container">
           <div id="question-container" class="hide">
@@ -26,12 +41,15 @@
               <button class="btn">Answer 4</button>
             </div>
           </div>
+          
           <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
           </div>
         </div>
 
+     
+  
               
               
              
