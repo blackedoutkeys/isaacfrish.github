@@ -8,18 +8,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
     <title>Coding Quiz</title>
   </head>
     <body>
-      <div class="jumbotron">
+      <div class="jumbotron leadercontainer">
         <h2>Code Quiz For Beginners</h2>
-        <button class="btn " id="leaderBoardButton">Leaderboard</button>
-        <div class="container jumbotron hide" id="jumbotronLeader">
-          <h1>Leaderboard</h1>
+        <button class="btn " id="leaderBoardButton" onclick= accessLeaderboard() >Leaderboard</button>
+        <div class="container leadercontainer jumbotron hide" id="jumbotronLeader">
+          <h1>Hall of Fame</h1>
               <ol>
-                  <ul id="firstPlace">1. </ul>
-                  <ul id="secondPlace">2. </ul>
-                  <ul id="thirdPlace">3. </ul>
+                  <ul input type ='text' id="firstPlace" aria-placeholder="First Place">1. </ul>
+                  <ul input type ='text' id="secondPlace" aria-placeholder="Second Place">2. </ul>
+                  <ul input type ='text' id="thirdPlace" aria-placeholder="Third Place">3. </ul>
   
               </ol>
   
