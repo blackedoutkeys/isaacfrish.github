@@ -28,7 +28,7 @@ var secondsLeft = 60;
 
 let currentQuestionIndex = 0;
 
-let leaders = []
+let leaders = [];
 
 
 //Questions array. Questions are set as objects and pull their appropriate answers (also objects) into container on next button click 
@@ -102,11 +102,9 @@ function setTime() {
       var timerInterval = setInterval(function() {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left.";
-              if(secondsLeft === 0) {
-          clearInterval(timerInterval);
-          stopGame;
-
-        } 
+        if (secondsLeft === 0) {
+          stopGame ();
+         }  
       }, 1000);
 	  }  
 
@@ -116,10 +114,12 @@ function startGame() {
   startButton.classList.add('hide');
   //look up this part of function for better understanding
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+  currentQuestionIndex = 0;
   countRightAnswers = 0; 
   //
   questionContainerElement.classList.remove('hide');
   setNextQuestion();
+  
 
 }
 
@@ -156,6 +156,7 @@ function resetState() {
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
+  
 }
 
 //look up the e trigger and the rest of this function
@@ -168,20 +169,31 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct);
   });
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+  if (shuffledQuestions.length > currentQuestionIndex + 1 ) {
     nextButton.classList.remove('hide');
   } else {
     startButton.innerText = 'Restart';
     startButton.classList.remove('hide');
-    stopGame(); 
+    stopGame();
+    restartGame (); 
   }
   if (selectedButton.dataset = correct) {
     countRightAnswers++;
-
-  }  // if (selectedButton.dataset = wrong) {
+    } else {
+    secondsLeft = secondsLeft - 10;
+  }
+  
+  
+  // if (selectedButton.dataset = wrong) {
   //   timer - 10 secondsLeft;
   // }
-  currentQuestionIndex++;
+  
+function restartGame () {
+  secondsLeft = 60;
+  countRightAnswers = 0;
+  
+}
+
 
  document.getElementById('right-answers').innerHTML = countRightAnswers; 
   
@@ -212,12 +224,9 @@ function stopGame () {
 var leaderRank = document.querySelector(".leaderRank")
 leaderRank.textContent =userName
   console.log(userName, countRightAnswers, leaders)
-   resetState;
-  
-}
-
-
-  
+   resetState ();
+   restartGame ();
+  }
 
 
 //toggle feature to access leaderboard. can be accessed at any time during the game
@@ -234,10 +243,5 @@ leaderRank.textContent =userName
 
 
             
-              /*local stroage not showing users or pulling proper data. score doesnt reset properly.
-              timer ending doesnt trigger end game functionality
-              edit CSS to be my styling and simplify for "appropriate leveling."
-              changing to correct answer allows for infinite score increase
-              clicking restart once clock hits zero starts timer again in negative state
-              make readme*/
+            
 }
