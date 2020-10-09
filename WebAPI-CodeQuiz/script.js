@@ -18,7 +18,7 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 let countRightAnswers = 0;
 
 //creates GB for shuffled questions and index array for said questions
-let shuffledQuestions, currentQuestionIndex;
+let shuffledQuestions;
 
 //sets GB to pull game timer from the HTML
 var timeEl = document.getElementById("gameTimer");
@@ -26,6 +26,9 @@ var timeEl = document.getElementById("gameTimer");
 //GB sets timer to 60 seconds
 var secondsLeft = 60;
 
+let currentQuestionIndex = 0;
+
+let leaders = []
 
 
 //Questions array. Questions are set as objects and pull their appropriate answers (also objects) into container on next button click 
@@ -103,7 +106,7 @@ function setTime() {
           clearInterval(timerInterval);
           stopGame;
 
-        }
+        } 
       }, 1000);
 	  }  
 
@@ -113,7 +116,6 @@ function startGame() {
   startButton.classList.add('hide');
   //look up this part of function for better understanding
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-  currentQuestionIndex = 0;
   countRightAnswers = 0; 
   //
   questionContainerElement.classList.remove('hide');
@@ -175,11 +177,11 @@ function selectAnswer(e) {
   }
   if (selectedButton.dataset = correct) {
     countRightAnswers++;
-  };
-  // if (selectedButton.dataset = wrong) {
+
+  }  // if (selectedButton.dataset = wrong) {
   //   timer - 10 secondsLeft;
   // }
-  
+  currentQuestionIndex++;
 
  document.getElementById('right-answers').innerHTML = countRightAnswers; 
   
@@ -206,35 +208,16 @@ function clearStatusClass(element) {
 
 function stopGame () {
   var userName = prompt('Please enter your initials for the leaderboard!');
-  saveHighScore;
-  resetState;
-   
+  leaders.push({userName, countRightAnswers})
+var leaderRank = document.querySelector(".leaderRank")
+leaderRank.textContent =userName
+  console.log(userName, countRightAnswers, leaders)
+   resetState;
+  
 }
 
-function saveHighScore () {
-  //get value from user prompt
-  // var userInitials = userName.value.trim();
 
-
-  // if(userInitials !== "") {
-
-  //   var highscore  = 
-  //     JSON.parse(window.localStorage.getItem('jumbotronLeader')) || [];
-
-
-  //     var finalScore = {
-  //       score: countRightAnswers
-  //       userInitials: userInitials
-  //     };
-
-
-  //     highscore.push(finalScore);
-  //     window.localStorage.setItem('jumbotronLeader', JSON.stringify(highscore));
-
-  //     window.location.href="leadercontainer.innerHTML"
-
-  }
-//this is a halt game function for when the player either runs out of time or finishes the quiz
+  
 
 
 //toggle feature to access leaderboard. can be accessed at any time during the game
