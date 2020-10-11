@@ -1,17 +1,27 @@
-var hour 9 = $(#9);
-var hour 10 = $(#10);
-var hour 11 = $(#11);
-var hour 12 = $(#12);
-var hour 1 = $(#13);
-var hour 2 = $(#14);
-var hour 3 = $(#15);
-var hour 4 = $(#16);
-var hour 5 = $(#17);
-var time = moment ();
+//global variables for hours
 
+var hour8 = $("#8");
+var hour9 = $("#9");
+var hour10 = $("#10");
+var hour11 = $("#11");
+var hour12 = $("#12");
+var hour1 = $("#13");
+var hour2 = $("#14");
+var hour3 = $("#15");
+var hour4 = $("#16");
+var hour5 = $("#17");
+var time = moment();
+
+
+// gets data for the header date
+function currentDate() {
+    $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
+
+}
+//sets current date and saves user entry data
 function dayPlanner() {
 
-    $(#currentDay).text(moment().format("dddd [the] Do [of] MMMM"));
+    currentDate();
 
     $(".time-block").each(function () {
         var id = $(this).attr("id");
@@ -22,17 +32,17 @@ function dayPlanner() {
         }
     });
 }
-
+//activates save button within HTML
 dayPlanner ();
 var saveBtn = $(".saveBtn");
-
+//on click function
 saveBtn.on("click", function () {
     var time = $(this).parent().attr("id");
     var schedule = $(this).siblings(".schedule").val();
 
     localStorage.setItem(time, schedule);
 });
-
+//sets the CSS to activate color changes based on the past/present/future hours to help organize
 function pastPresentFuture () {
     hour = time.hours();
     $(".time-block").each(function () {
@@ -47,7 +57,7 @@ function pastPresentFuture () {
         else {
             $(this).addClass("past");
         }
-    })
+    });
 }
-
+//calls the function
 pastPresentFuture ();

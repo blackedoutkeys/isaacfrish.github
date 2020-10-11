@@ -1,3 +1,5 @@
+/* overall style for page */
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -12,7 +14,7 @@ body {
     border-left: 1px solid black;
     padding: 10px;
   }
-  
+  /* top of planner header */
   .jumbotron {
     text-align: center;
     background-color: transparent;
@@ -33,15 +35,16 @@ body {
   .row {
     white-space: pre-wrap;
     height: 80px;
+    background-color: lightgray;
     border-top: 1px solid white;;
   }
-  
+  /* hour block on the left side of the planner */
   .hour {
-    background-color: lightgrey;
+    background-color: grey;
     color: #000000;
     border-top: 1px dashed #000000;
   }
-  
+  /* looks for JS to change color based on hour of day */
   .past {
     background-color: #d3d3d3;
     color: white;
@@ -56,7 +59,7 @@ body {
     background-color: #77dd77;
     color: white;
   }
-  
+  /* save button design */
   .saveBtn {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
@@ -69,4 +72,5 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }
-  
+
+ 
