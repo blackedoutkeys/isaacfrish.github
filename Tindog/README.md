@@ -1,3 +1,6 @@
+# Link can be found at:
+https://blackedoutkeys.github.io/isaacfrish.github/Tindog/
+
 # TinDog
 
 TinDog is a made up app made to meet local dogs and their owners.
