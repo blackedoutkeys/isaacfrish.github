@@ -23,10 +23,10 @@ Weather Dash is a web based application that allows the user to search and local
 
 ## Screenshots of App in Use
 
-![picture](Images\emptyweatherdash.png)
-![picture](Images\searchedcity.png)
-![picture](Images\currentweatherinfo.png)
-![picture](Images\5dayforecast.png)
-![picture](Images\multiple searches.png)
+![picture](https://github.com/blackedoutkeys/isaacfrish.github/blob/master/Weather-Dashboard/Images/emptyweatherdash.png)
+![picture](https://github.com/blackedoutkeys/isaacfrish.github/blob/master/Weather-Dashboard/Images/searchedcity.png)
+![picture](https://github.com/blackedoutkeys/isaacfrish.github/blob/master/Weather-Dashboard/Images/currentweatherinfo.png)
+![picture](https://github.com/blackedoutkeys/isaacfrish.github/blob/master/Weather-Dashboard/Images/5dayforecast.png)
+![picture](https://github.com/blackedoutkeys/isaacfrish.github/blob/master/Weather-Dashboard/Images/multiple%20searches.png)
 
 ## Copyright 2020
