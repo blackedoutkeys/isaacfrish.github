@@ -11,52 +11,57 @@
 <body>
  
      
-      <!-- navbar -->
-      <nav class="navbar navbar-dark">
-        <!-- Brand -->
-      <img src="./images/logo_left.gif" alt="Logo" width="250px" height="250px">
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <img src="./images/logo_left.gif" alt="Speaker-Company-Logo" width="250px" height="250px">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
       
-        <!-- Links -->
-      <ul class="navbar-nav">
-        <!-- Home Page -->
-        <li class="nav-item">
-            <a class="nav-link" href="index.html" >Home</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="articles.html" >Articles</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="speakers.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Speakers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Halcyon</a>
+          <a class="dropdown-item" href="#">Finalists Monitor</a>
+          <a class="dropdown-item" href="#">MicroStatements</a>
+          <a class="dropdown-item" href="#">Anthology</a>
+          <a class="dropdown-item" href="#">Statement II*</a>
+          <a class="dropdown-item" href="#">Uluwatu</a>
+          <a class="dropdown-item" href="speakers.html">More...</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+  <img src="./images/logo_right.gif" alt="Speaker-Company-Logo" width="250px" height="250px">
+</nav>
 
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="speakers.html" id="navbardrop" data-toggle="dropdown">
-                Speakers
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Halcyon</a>
-                <a class="dropdown-item" href="#">Finalists Monitor</a>
-                <a class="dropdown-item" href="#">MicroStatements</a>
-                <a class="dropdown-item" href="#">Anthology</a>
-                <a class="dropdown-item" href="#">Statement II*</a>
-                <a class="dropdown-item" href="#">Uluwatu</a>
-                <a class="dropdown-item" href="speakers.html">More...</a>
-               </div>
-
-        <!-- Contact Link -->
-        <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </li>
-      
-      
-          </div>
-        </li>
-      </ul>
-      
-      <img src="./images/logo_right.gif" alt="Logo" width="250px" height="250px">
-    </nav>
 
 <body>
-    <form>
+  <h2 id="contactMessage">Stay in touch!</h2>
+  <!-- form for customer data collection and contact -->
+  <img src="images/contactimage.png" alt="Living Room Speaker Setup" id="contactPic" 
+  <!-- Collects Full name of customer -->
+    <form enctype="text/plain" action="mailto:"igeek89@me.com" method="post">
         <div class="form-group">
           <label for="exampleFormControlInput1">Full Name</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
         </div>
+
+  <!-- Collects contact method type -->
 
         <div class="form-group">
           <label for="exampleFormControlSelect2">Contact Type (please select one)</label>
@@ -64,25 +69,28 @@
             <option>Phone</option>
             <option>Email</option>
             <option>Text</option>
-          </div>
+          </select>
+        </div>
+  <!-- Collects emial or phone number of customer -->
 
-        <label for="exampleFormControlInput1">Contact Info</label>
+        <div>
+          <label for="exampleFormControlInput1">Contact Info</label>
           <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com / (000) 000-0000">
         </div>
-        <div class="form-group">
-                 </div>
-        
+
+        <br>
+  <!-- allows for customer to enter their message into the form -->
+
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Message</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
+
+      <button type="button" class="btn btn-outline-primary" onclick="contactFunction()">Submit</button>
+
+
       </form>
-
-<button type="button" class="btn btn-outline-primary">Submit</button>
-
-
-
 
 </body>
 

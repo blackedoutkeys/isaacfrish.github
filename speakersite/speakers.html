@@ -1,3 +1,5 @@
+<!-- sample coding for the speakers html page -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,107 +9,388 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-</head>
+  
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  
 <body>
  
      
-  <!-- navbar -->
-  <nav class="navbar navbar-dark">
-    <!-- Brand -->
-  <img src="./images/logo_left.gif" alt="Logo" width="250px" height="250px">
-  
-    <!-- Links -->
-  <ul class="navbar-nav">
-    <!-- Home Page -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.html" >Home</a>
-    </li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="speakers.html" id="navbardrop" data-toggle="dropdown">
-            Speakers
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Halcyon</a>
-            <a class="dropdown-item" href="#">Finalists Monitor</a>
-            <a class="dropdown-item" href="#">MicroStatements</a>
-            <a class="dropdown-item" href="#">Anthology</a>
-            <a class="dropdown-item" href="#">Statement II*</a>
-            <a class="dropdown-item" href="#">Uluwatu</a>
-            <a class="dropdown-item" href="speakers.html">More...</a>
-           </div>
-
-    <!-- Contact Link -->
-    <li class="nav-item">
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <img src="./images/logo_left.gif" alt="Speaker-Company-Logo" width="250px" height="250px">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="articles.html" >Articles</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="speakers.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Speakers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Halcyon</a>
+          <a class="dropdown-item" href="#">Finalists Monitor</a>
+          <a class="dropdown-item" href="#">MicroStatements</a>
+          <a class="dropdown-item" href="#">Anthology</a>
+          <a class="dropdown-item" href="#">Statement II*</a>
+          <a class="dropdown-item" href="#">Uluwatu</a>
+          <a class="dropdown-item" href="speakers.html">More...</a>
+        </div>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="contact.html">Contact Us</a>
-    </li>
-  
-  
-      </div>
-    </li>
-  </ul>
-  
-  <img src="./images/logo_right.gif" alt="Logo" width="250px" height="250px">
+      </li>
+    </ul>
+  </div>
+  <img src="./images/logo_right.gif" alt="Speaker-Company-Logo" width="250px" height="250px">
 </nav>
 
-     <!-- header -->
-  <header></header>
-<!-- body w3 school copy for sidebar material -->
 
-<body>
-<div class="w3-sidebar w3-bar-block w3-light-grey" style="width:50%">
-  <div class="w3-container w3-black">
-    <h4>Menu</h4>
-  </div>
+  
+  <body>
+    
 
-      <img src="images/mad_scientist.jpg" alt="Comic Curt" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-black">Home</a>
-  <a href="#" class="w3-bar-item w3-button">Speakers <span class="w3-tag w3-black w3-right w3-margin-right">25</span></a>
-  <a href="#" class="w3-bar-item w3-button">Articles</a>
-<div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Halcyon</a>
-        <a class="dropdown-item" href="#">Finalists Monitor</a>
-        <a class="dropdown-item" href="#">MicroStatements</a>
-        <a class="dropdown-item" href="#">Anthology</a>
-        <a class="dropdown-item" href="#">Statement II*</a>
-        <a class="dropdown-item" href="#">Uluwatu</a>
-        <a class="dropdown-item" href="#">Finalists</a>
-        <a class="dropdown-item" href="#">More...</a>
-        <a class="dropdown-item" href="#">Invictus</a>
-        <a class="dropdown-item" href="#">Sten II</a>
-        <a class="dropdown-item" href="#">Stentorians</a>
-        <a class="dropdown-item" href="#">Singularity</a>
-        <a class="dropdown-item" href="#">AviaTrix</a>
-        <a class="dropdown-item" href="#">Maverick</a>
-        <a class="dropdown-item" href="#">Statements</a>
-        <a class="dropdown-item" href="#">MiniStatements</a>
-        <a class="dropdown-item" href="#">Statement Center Channel</a>
-        <a class="dropdown-item" href="#">Statement Monitor</a>
-        <a class="dropdown-item" href="#">Tritrix</a>
-        <a class="dropdown-item" href="#">TritrixMT</a>
-        <a class="dropdown-item" href="#">Triune '07</a>
-        <a class="dropdown-item" href="#">Exclamations</a>
-        <a class="dropdown-item" href="#">Scrappy</a>
-        <a class="dropdown-item" href="#">Cinderella</a>
-        <a class="dropdown-item" href="#">Triune TL (Original)</a>
-        <a class="dropdown-item" href="#">Triune L/C/R (Original)</a>
+<main role="main">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>Example headline.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          </div>
+        </div>
       </div>
-    </li>
-  </ul>
-  <div class="w3-panel w3-black w3-display-container">
-    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-black w3-display-topright">&times;</span>
-    <p>All of our speaker designs are copyrighted, but are free for non-commerical usage. Enjoy!</p>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-right">
+            <h1>One more for good measure.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
-</div>
 
-<div style="margin-left:50%">
+  <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="w3-container">
-<h2>Sidebar</h2>
-<p>Put any element inside the sidebar.</p>
-</div>
+  <div class="container marketing">
 
-</div>
+    <!-- Three columns of text below the carousel -->
+    <!-- Halcyon -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="images/halcyonfront.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Halcyon</title>
+        <h2>Halcyon</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
 
+<!-- Finalists Monitor -->
+      <div class="col-lg-4">
+        <img src="images/Microstatement1.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Finalists Monitor</title>
+        <h2>Finalists Monitor</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+<!-- MicroStatements -->
+      <div class="col-lg-4">
+        <img src="images/Microstatement1.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>MicroStatements</title>
+        <h2>MicroStatements</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+    </div><!-- /.row -->
+
+    <!-- Anthology  -->
+	<div class="row">
+      <div class="col-lg-4">
+                <img src="images/Anthology_Pair.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Anthology</title>
+
+        <h2>Anthology</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      
+<!-- Statement II* -->
+      <div class="col-lg-4">
+                <img src="images/statement2.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Statement II*</title>
+
+        <h2>Statement II*</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+
+      <!-- Uluwatu -->
+      <div class="col-lg-4">
+                <img src="images/uluwatu.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Uluwatu</title>
+
+        <h2>Uluwatu</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+	<div class="row">
+
+    <!-- Finalists -->
+      <div class="col-lg-4">
+                <img src="images/finalists.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Finalists</title>
+
+        <h2>Finalists</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+
+      <!-- Invictus -->
+      <div class="col-lg-4">
+                <img src="images/invictus.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Invictus</title>
+
+        <h2>Invictus</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Sten II -->
+      <div class="col-lg-4">
+                <img src="images/sten2.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Sten II</title>
+
+        <h2>Sten II</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- Stentorians -->
+	<div class="row">
+      <div class="col-lg-4">
+                <img src="images/stentorians.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Stentorians</title>
+
+        <h2>Stentorians</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Singularity -->
+      <div class="col-lg-4">
+                <img src="images/singularity.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Singularity</title>
+
+        <h2>Singularity</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- AviaTrix -->
+      <div class="col-lg-4">
+                <img src="images/aviatrix.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>AviaTrix</title>
+
+        <h2>AviaTrix</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- Maverick -->
+	<div class="row">
+      <div class="col-lg-4">
+                <img src="images/Maverick_IMG.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Maverick</title>
+
+        <h2>Maverick</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Statements -->
+      <div class="col-lg-4">
+                <img src="images/SteatementPic.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Statements</title>
+
+        <h2>Statements</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- MiniStatements -->
+      <div class="col-lg-4">
+                <img src="images/MiniStatements.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>MiniStatements</title>
+
+        <h2>MiniStatements</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- Statement Center Channel -->
+	<div class="row">
+      <div class="col-lg-4">
+                <img src="images/StatementCenterPic.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Statement Center Channel</title>
+
+        <h2>Statement Center Channel</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Statement Monitor -->
+      <div class="col-lg-4">
+                <img src="images/StatementMonitor.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Statement Monitor</title>
+
+        <h2>Statement Monitor</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Tritrix -->
+      <div class="col-lg-4">
+                <img src="images/tritrix.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Tritrix</title>
+
+        <h2>Tritrix</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- TritrixMT -->
+	<div class="row">
+      <div class="col-lg-4">
+                <img src="images/tritrixMT.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>TritrixMT</title>
+
+        <h2>TritrixMT</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Triune '07 -->
+      <div class="col-lg-4">
+                <img src="images/Triunepic.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Triune '07</title>
+
+        <h2>Triune '07</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Exclamations -->
+      <div class="col-lg-4">
+                <img src="images/UberExclamationsPicsmall.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Exclamations</title>
+
+        <h2>Exclamations</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- Scrappy -->
+	<div class="row">
+      <div class="col-lg-4">
+                <img src="images/scrappyPic.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Scrappy</title>
+
+        <h2>Scrappy</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Cinderella -->
+      <div class="col-lg-4">
+                <img src="images/Cinderellapic.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Cinderella</title>
+
+        <h2>Cinderella</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+
+      <!-- Triune TL (Original) -->
+      <div class="col-lg-4">
+                <img src="images/Triune_TL2.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Halcyon</title>
+
+        <h2>Triune TL (Original)</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- Triune L/C/R (Original) -->
+    <div class="row">
+      <div class="col-lg-12">
+                <img src="images/Triunesetpic.jpg" class="bd-placeholder-img rounded-circle" width="250px" height="250px" aria-label="Placeholder: 140x140"><title>Triune L/C/R (Original)</title>
+
+        <h2>Triune L/C/R (Original)</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">More Info</a></p>
+      </div><!-- /.col-lg-4 -->
+     
+    </div><!-- /.row -->
+
+  
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  
+  <footer class="container_foot">
+    <p>&copy; Copyright 2010 All Rights Reserved A Wholly Owned Subsidiary of C & W Audio Labs</p>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
